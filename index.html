@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeBlitz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Start Screen -->
+  <div id="startScreen" class="screen active">
+    <h1 class="title">TYPEBLITZ</h1>
+
+    <div class="difficulty">
+      <label>Select Difficulty</label>
+      <select id="difficultySelect">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+
+    <button id="startBtn">Start Game</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="gameScreen" class="screen">
+    <div id="hud">
+        <span>Score: <span id="score">0</span></span>
+        <span>Points: <span id="points">100</span></span>
+        <span>Time: <span id="timer">0</span>s</span>
+      </div>
+
+    <div id="gameArea"></div>
+
+    <input 
+      type="text" 
+      id="typingInput" 
+      placeholder="Type here..."
+      autocomplete="off"
+    />
+  </div>
+
+  <!-- End Screen -->
+  <div id="endScreen" class="screen">
+    <h2>Game Over</h2>
+    <p id="finalStats"></p>
+    <button id="restartBtn">Play Again</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

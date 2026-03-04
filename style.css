@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  body {
+    background: radial-gradient(circle at center, #0f2027, #0b0c10);
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Screens */
+  .screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .screen.active {
+    display: flex;
+  }
+  
+  /* Title */
+  .title {
+    font-size: 4rem;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    color: #00f2ff;
+    text-shadow: 0 0 20px #00f2ff;
+  }
+  
+  /* Difficulty */
+  .difficulty {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  select {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #00f2ff, #4facfe);
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00f2ff;
+  }
+  
+  /* Game Area */
+  #gameArea {
+    position: relative;
+    width: 100%;
+    height: 75%;
+    overflow: hidden;
+  }
+  
+  /* HUD */
+  #hud {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00f2ff;
+  }
+  
+  /* Input */
+  #typingInput {
+    position: absolute;
+    bottom: 20px;
+    padding: 12px 20px;
+    width: 300px;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    text-align: center;
+  }
+  
+  /* Clouds */
+  .cloud {
+    position: absolute;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    animation: floatUp linear forwards;
+  }
+  
+  @keyframes floatUp {
+    from {
+      transform: translateY(100vh);
+    }
+    to {
+      transform: translateY(-100px);
+    }
+  }
+  /* Burst Animation */
+.burst {
+    animation: burstAnim 0.4s ease-out forwards;
+  }
+  
+  @keyframes burstAnim {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.4);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  /* Missed Cloud Effect */
+  .miss {
+    background: rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 20px red;
+  }
+  .success {
+    background: rgba(0, 255, 150, 0.4);
+    box-shadow: 0 0 25px #00ff95;
+  }
+  /* Last 10 sec pressure effect */
+.warning {
+    animation: pulseZoom 0.8s infinite;
+  }
+  
+  @keyframes pulseZoom {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
